@@ -1,5 +1,9 @@
+NOTE!!!! this is very early code - I am still debugging and optimizing
+
 This is my POC for a motorized Faceplate for my iron man Helmet.
 It uses 2 synchronized MG90 servos in orderto get enough torque to move the faceplate.
+
+I use Visual studio code and Platformio to compile and upload the code to the MCU
 
 Key features:
 - Servo Movement by button press

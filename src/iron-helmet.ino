@@ -34,7 +34,7 @@ void setup() {
             Serial.println(F("1.Please recheck the connection!"));
             Serial.println(F("2.Please insert the SD card!"));
             while(true){
-            delay(0); // Code to compatible with ESP8266 watch dog.
+            delay(0); 
             }
         }
         Serial.println(F("Soundsystem online."));
@@ -42,7 +42,7 @@ void setup() {
         jarvisSound.volume(30);  //Set volume value. From 0 to 30
         jarvisSound.play(4);  //Play mp3 004
         delay(3000);
-        jarvisSound.play(2);  //Play mp3 004
+        jarvisSound.play(2);  //Play mp3 002
     }else{
         Serial.println(F("Soundsystem deactivated for debugging."));
     }

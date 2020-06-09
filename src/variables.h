@@ -16,3 +16,4 @@ int pos1 = 0;
 int pos2 = 0;
 bool opened = false;
 int ledNum = 0;
+
