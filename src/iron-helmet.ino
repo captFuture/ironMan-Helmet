@@ -11,7 +11,7 @@ DFRobotDFPlayerMini jarvisSound;
 
 void setup() {
     Serial1.begin(9600);
-    M5.begin(true, true, true);
+    M5.begin(true, false, true);
     delay(10);
 
     Serial.println(); Serial.println("Connecting hinge...");
@@ -20,6 +20,7 @@ void setup() {
     servo2.attach(SERVO2PIN);
     pinMode(SERVO1POWERPIN, OUTPUT);
     pinMode(SERVO2POWERPIN, OUTPUT);
+
     servo1.writeMicroseconds(SERVO1Current);
     servo1.writeMicroseconds(SERVO2Current);
 
@@ -43,9 +44,14 @@ void setup() {
         jarvisSound.play(4);  //Play mp3 004
         delay(3000);
         jarvisSound.play(2);  //Play mp3 002
+
     }else{
         Serial.println(F("Soundsystem deactivated for debugging."));
     }
+
+    // Switch off darlington Array (Servopower)
+    digitalWrite(SERVO1POWERPIN, LOW);
+    digitalWrite(SERVO2POWERPIN, LOW);
 }
 
 void loop() {
@@ -77,6 +83,15 @@ void loop() {
     }
     delay(50);
     M5.update();
+
+    /*Serial.println("Servo Power High");
+    digitalWrite(SERVO1POWERPIN, LOW);
+    digitalWrite(SERVO2POWERPIN, LOW);
+    delay(1000);
+    Serial.println("Servo Power low");
+    digitalWrite(SERVO1POWERPIN, HIGH);
+    digitalWrite(SERVO2POWERPIN, HIGH);
+    delay(1000);*/
 }
 
 void openHelmet(){

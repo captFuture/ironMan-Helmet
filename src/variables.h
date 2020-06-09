@@ -3,7 +3,7 @@
 #define SERVO1POWERPIN 21
 #define SERVO2POWERPIN 25
 
-bool debug = true;
+bool debug = false;
 int SERVO1Current = 700;
 int SERVO2Current = 2250;
 int maxLoop = 1024;
